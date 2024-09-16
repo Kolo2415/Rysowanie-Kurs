@@ -85,7 +85,7 @@ button {
     font-weight: 900;
     float: left;
     width: 150px;
-    min-height: 380px;
+    height: 380px;
     padding: 20px;
     background-color: blueviolet;
     text-align: center;
@@ -101,12 +101,12 @@ button {
     
     width: auto;
     background-color: aliceblue;
-    min-height: 380px;
+    height: 380px;
     text-align: justify;
     margin-left: 200px;
     padding: 20px;
     border-radius: 10px;
-    min-height: 400px;
+    
 
 
 }
