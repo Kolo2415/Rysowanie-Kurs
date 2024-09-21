@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Range Slider</title>
+    <style>
+      input[type='range'] {
+        -webkit-appearance: none; /* Ukrywa domyślny styl */
+        width: 100%;
+        background: transparent; /* Tło suwaka */
+        cursor: pointer; /* Kursor */
+      }
+
+      input[type='range']::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px; /* Szerokość "suwałka" */
+        height: 20px; /* Wysokość "suwałka" */
+        background: gray; /* Kolor suwałka */
+        border: none; /* Bez obramowania */
+        border-radius: 50%; /* Zaokrąglenie */
+        cursor: pointer; /* Kursor */
+      }
+
+      input[type='range']::-webkit-slider-runnable-track {
+        background: black; /* Kolor suwaka */
+        height: 5px; /* Wysokość suwaka */
+        border: none; /* Bez obramowania */
+      }
+
+      /* Dla Firefox */
+      input[type='range']::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        background: gray;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      input[type='range']::-moz-range-track {
+        background: black;
+        height: 5px;
+        border: none;
+      }
+
+      /* Dla IE */
+      input[type='range']::-ms-thumb {
+        width: 20px;
+        height: 20px;
+        background: gray;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      input[type='range']::-ms-track {
+        background: black;
+        height: 5px;
+        border: none;
+        color: transparent; /* Ukrywa domyślny styl */
+      }
+    </style>
+  </head>
+  <body>
+    <input type="range" min="0" max="100" value="50" />
+  </body>
+</html>
