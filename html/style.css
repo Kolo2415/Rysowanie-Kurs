@@ -163,7 +163,7 @@ button:hover {
 
 #sidebar {
   width: 200px;
-  height: 100vh;
+  height: calc(100vh - 70px);
   padding: 20px;
   padding-right: 20px;
   position: fixed;
@@ -195,13 +195,15 @@ button:hover {
   padding: 20px;
   width: 100%;
   height: 100px;
-  background-image: url(Image/IconWeb.png);
+  background-image: url(pobrane.gif);
+
   color: white;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 900;
+
 }
 
 .settings {
