@@ -6,6 +6,7 @@ body {
   box-sizing: border-box;
   background-color: white;
   color: #252525;
+  overflow-x: hidden;
 }
 
 body.dark {
@@ -142,6 +143,7 @@ button:hover {
   padding: 20px;
   background-color: aliceblue;
   min-height: calc(100vh - 70px);
+  text-align: center;
 }
 
 #footer {
@@ -222,24 +224,16 @@ button:hover {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;Strona Główna
-    Aplikacja
-    Opcje
-    Informacje
-    O projekcie
+    width: 100%;
     z-index: 100;
     height: auto;
   }
-  .webico
-  {
-
-  }
+  
   .burger
   {
-    
     display: flex;
   }
-  /* Ukryte menu */
+
   #menu ul {
     margin-top: 60px;
     display: none;
@@ -248,6 +242,7 @@ button:hover {
     padding: 0;
     width: 100%; /* Rozciągnij menu na całą szerokość */
   }
+  
   .settings {
     text-align: center;
     width: 100%;
@@ -268,12 +263,13 @@ button:hover {
   }
 
   #content {
-    margin-left: 0;
+    margin-left: 40px;
   }
 
   #namesstyles {
     font-size: 24px;
   }
+
 }
 
 @media screen and (max-width: 100px) {
