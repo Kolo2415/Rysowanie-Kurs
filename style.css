@@ -261,7 +261,9 @@ button:hover {
   }
 
   #content {
-    margin-left: 20px;
+    margin: 0;
+    margin-left: 1px;
+    margin-right: 1px;
   }
 
   #namesstyles {
