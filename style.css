@@ -113,7 +113,12 @@ button:hover {
   left: 0;
   z-index: 100;
 }
-
+#menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
 #namesstyles {
   margin-top: 70px;
   text-align: center;
@@ -147,12 +152,13 @@ button:hover {
 }
 
 .burger {
+
   position: relative;
   width: 40px;
   height: 30px;
   background: transparent;
   cursor: pointer;
-  display: block;
+  display: none;
 }
 
 .burger input {
@@ -197,7 +203,7 @@ button:hover {
 
 .burger input:checked ~ span:nth-of-type(2) {
   width: 0%;
-  opacity: 0;
+  opacity: 0.3;
 }
 
 .burger input:checked ~ span:nth-of-type(3) {
@@ -208,8 +214,39 @@ button:hover {
 
 @media screen and (max-width: 768px) {
   #menu {
-    flex-direction: column;
+    top: 0;
+    display: flex;
+    align-items: center;
+    background-color: #252525;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;Strona Główna
+    Aplikacja
+    Opcje
+    Informacje
+    O projekcie
+    z-index: 100;
     height: auto;
+  }
+  .webico
+  {
+
+  }
+  .burger
+  {
+    
+    display: flex;
+  }
+  /* Ukryte menu */
+  #menu ul {
+    margin-top: 60px;
+    display: none;
+    list-style: none;
+    flex-direction: column;
+    padding: 0;
+    width: 100%; /* Rozciągnij menu na całą szerokość */
   }
   .settings {
     text-align: center;
@@ -217,20 +254,20 @@ button:hover {
     padding: 20px;
     border-radius: 20px;
     border-bottom: 2px solid grey;
-    padding: 20px;
   }
 
   #sidebar {
+    display: none;
     top: auto;
     width: 100px;
+    height: 100%;
     left: 0;
     height: auto;
-    position: relative;
+    position: fixed;
     margin-bottom: 20px;
   }
 
   #content {
-    top: auto;
     margin-left: 0;
   }
 
