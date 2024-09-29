@@ -1,23 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const settingsElement = document.querySelector('body div div label');
+  const settingsElement = document.querySelector('.switch input');
+  const htmlElement = document.documentElement;
 
-  settingsElement.addEventListener('click', () => {
-    document.querySelector('body').classList.toggle('dark');
-  });
+
+  const currentTheme = localStorage.getItem('theme') || 'light';
+  htmlElement.setAttribute('data-theme', currentTheme);
+
+
+  settingsElement.checked = currentTheme === 'dark';
+
+
+  const toggleTheme = () => {
+    const newTheme = htmlElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    htmlElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  };
+
+
+  settingsElement.addEventListener('change', toggleTheme);
 });
+
+
 document.addEventListener('DOMContentLoaded', () => {
-  // Wybieramy burgera i menu
   const burgerElement = document.querySelector('.burger input');
   const menuElement = document.querySelector('#menu ul');
 
-  // Nasłuchujemy na kliknięcie burgera
   burgerElement.addEventListener('click', () => {
-    // Sprawdzamy, czy menu jest widoczne i przełączamy między `none` a `flex`
     if (menuElement.style.display === 'flex') {
       menuElement.style.display = 'none';
       console.log('xd');
     } else {
       menuElement.style.display = 'flex';
+      console.log('dx');
     }
   });
 });

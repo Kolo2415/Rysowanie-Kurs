@@ -13,6 +13,9 @@ body.dark {
   background-color: #252525;
   color: white;
 }
+body.light {
+  background-color: white;
+}
 
 a:visited {
   color: inherit;
@@ -232,9 +235,9 @@ button:hover {
     display: flex;
   }
 
-  #menu ul {
+  #menu ul li {
     margin-top: 60px;
-    display: none;
+    display: block;
     list-style: none;
     flex-direction: column;
     padding: 0;
@@ -261,12 +264,17 @@ button:hover {
   }
 
   #content {
-    margin: 0;
-    margin-left: 1px;
-    margin-right: 1px;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+  #footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: -20px;
   }
 
   #namesstyles {
+    padding: 20px;
     text-align: center;
     font-size: 24px;
   }

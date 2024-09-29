@@ -1,0 +1,127 @@
+:root {
+    --black: #2a2e35;
+    --white: #ffffff;
+    --blue: #36c;
+    --bg: var(--white);
+    --text: var(--blue);
+    --bg-nav: var(--blue);
+    --text-nav: var(--white);
+    --border-color: var(--white);
+    --bg-normal: var(--blue);
+}
+
+[data-theme="light"] {
+    --bg: var(--white);
+    --text: var(--black);
+    --bg-nav: var(--white);
+    --text-nav: var(--black);
+    --border-color: var(--black);
+    --bg-normal: var(--blue);
+}
+
+[data-theme="dark"] {
+    --bg: var(--black);
+    --text: var(--white);
+    --bg-nav: var(--black);
+    --text-nav: var(--white);
+    --border-color: var(--white);
+    --bg-normal: var(--blue);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: var(--text);
+    background: var(--bg);
+    transition: background 300ms ease-in-out, color 1000ms ease-in-out;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 3rem;
+    transition: opacity .15s ease-out;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    line-height: 2;
+}
+
+h1 {
+    font-weight: 900;
+    padding: 20px 0;
+}
+
+h2 {
+    font-weight: 700;
+    padding: 20px 0;
+}
+
+main {
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+/* Navbar */
+
+.navbar {
+    min-height: 70px;
+    width: 100%;
+    background: var(--bg-nav);
+    color: var(--text-nav);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.175em 0.2em;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-item a {
+    width: 100%;
+    height: 100%;
+    size: 0.7rem;
+    padding-left: 10px;
+}
+
+.dropdown-item a::before {
+    content: ' ';
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: .7rem;
+    height: .7rem;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-bottom: 1px;
+}
+
+#dark::before {
+    background: #2a2e35;
+}
+
+#light::before {
+    background: #ffffff;
+}
+
+#normal::before {
+    background: var(--bg-normal);
+}
+
+.active-theme {
+    margin: 0 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid var(--text-nav);
+}
