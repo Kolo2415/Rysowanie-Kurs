@@ -1,20 +1,48 @@
+:root {
+  --bg-color-light: white;
+  --text-color-light: #232434;
+  --bg-color-dark: #232434;
+  --text-color-dark: white;
+  --button-bg-light: #232434;
+  --button-bg-dark: #333;
+  --button-text-light: white;
+  --border-color: grey;
+  --accent-color: #dbc602;
+  --menu-bg: #252525;
+  --menu-text: white;
+  --sidebar-bg-light: white;
+  --sidebar-bg-dark: #232434;
+  --content-bg-light: white;
+  --content-bg-dark: #232434;
+}
+
+[data-theme='light'] {
+  --sidebar-bg: var(--sidebar-bg-light);
+  --bg-color: var(--bg-color-light);
+  --text-color: var(--text-color-light);
+  --button-bg: var(--button-bg-light);
+  --content-bg: var(--content-bg-light);
+}
+
+[data-theme='dark'] {
+  --sidebar-bg: var(--sidebar-bg-dark);
+  --bg-color: var(--bg-color-dark);
+  --text-color: var(--text-color-dark);
+  --button-bg: var(--button-bg-dark);
+  --content-bg: var(--content-bg-dark);
+}
+* {
+  transition: background-color 0.4s, color 0.4s, border-color 0.4s;
+}
 body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
   box-sizing: border-box;
-  background-color: white;
-  color: #252525;
-  overflow-x: hidden;
-}
-
-body.dark {
-  background-color: #252525;
-  color: white;
-}
-body.light {
-  background-color: white;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.4s, color 0.4s;
 }
 
 a:visited {
@@ -25,17 +53,21 @@ a:visited {
   width: 40px;
   height: 40px;
   text-align: center;
-  border: 2px solid grey;
+  border: 2px solid var(--border-color);
   border-radius: 20px;
 }
+
 .settings {
   border-radius: 10px;
   padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
 }
+
 .settings:hover {
-  background-color: white;
-  color: black;
+  background-color: var(--button-bg);
+  color: var(--text-color);
 }
+
 .switch {
   font-size: 17px;
   position: relative;
@@ -57,7 +89,7 @@ a:visited {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: black;
+  background-color: var(--text-color);
   transition: 0.4s;
   border-radius: 30px;
 }
@@ -70,12 +102,12 @@ a:visited {
   border-radius: 20px;
   left: 0.3em;
   bottom: 0.3em;
-  background-color: #dbc602;
+  background-color: var(--accent-color);
   transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: black;
+  background-color: var(--text-color);
 }
 
 input:checked + .slider:before {
@@ -84,18 +116,19 @@ input:checked + .slider:before {
 
 button {
   font-size: 15px;
-  color: white;
+  color: var(--button-text-light);
   text-transform: uppercase;
   padding: 10px 20px;
   border-radius: 10px;
   border: 2px solid #ffffff;
-  background-color: #252525;
+  background-color: var(--button-bg);
   cursor: pointer;
   margin: 5px 0;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #333;
+  background-color: var(--button-bg-dark);
 }
 
 #container {
@@ -110,19 +143,22 @@ button:hover {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #252525;
-  color: white;
+  background-color: var(--menu-bg);
+  color: var(--menu-text);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
+  border-bottom: 3px solid grey;
 }
+
 #menu ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
 }
+
 #namesstyles {
   margin-top: 70px;
   text-align: center;
@@ -131,12 +167,13 @@ button:hover {
 }
 
 #sidebar {
+  border-right: 2px double grey;
   width: 200px;
   height: calc(100vh - 70px);
   position: fixed;
   top: 70px;
   left: 0;
-  background-color: blueviolet;
+  background-color: var(--sidebar-bg);
   padding: 20px;
   overflow-y: auto;
 }
@@ -144,7 +181,7 @@ button:hover {
 #content {
   margin-left: 220px;
   padding: 20px;
-  background-color: aliceblue;
+  background-color: var(--content-bg);
   min-height: calc(100vh - 70px);
   text-align: center;
 }
@@ -152,8 +189,8 @@ button:hover {
 #footer {
   text-align: center;
   padding: 20px;
-  background-color: #252525;
-  color: white;
+  background-color: var(--menu-bg);
+  color: var(--menu-text);
 }
 
 .burger {
@@ -174,7 +211,7 @@ button:hover {
   position: absolute;
   height: 4px;
   width: 100%;
-  background: white;
+  background: var(--menu-text);
   border-radius: 9px;
   opacity: 1;
   left: 0;
@@ -221,7 +258,7 @@ button:hover {
     top: 0;
     display: flex;
     align-items: center;
-    background-color: #252525;
+    background-color: var(--menu-bg);
     padding: 10px 20px;
     position: fixed;
     top: 0;
@@ -249,7 +286,7 @@ button:hover {
     width: 100%;
     padding: 20px;
     border-radius: 20px;
-    border-bottom: 2px solid grey;
+    border-bottom: 2px solid var(--border-color);
   }
 
   #sidebar {
@@ -267,6 +304,7 @@ button:hover {
     margin-left: -20px;
     margin-right: -20px;
   }
+
   #footer {
     margin-left: -20px;
     margin-right: -20px;
